@@ -83,7 +83,6 @@ class Websom {
 
 Websom::$Modules = [];
 Websom::$Config = Websom_Reload_Config();
-Websom::$Version = 2016.1;
 Websom::$Live = (Websom::$Config['live'] == "yes" ? true : false);
 
 //Start session\\ 
