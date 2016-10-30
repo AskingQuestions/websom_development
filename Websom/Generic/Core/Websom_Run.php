@@ -83,6 +83,7 @@ class Websom {
 
 Websom::$Modules = [];
 Websom::$Config = Websom_Reload_Config();
+Websom::$Version = '1.5';
 Websom::$Live = (Websom::$Config['live'] == "yes" ? true : false);
 
 //Start session\\ 
