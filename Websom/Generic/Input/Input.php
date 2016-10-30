@@ -325,14 +325,14 @@ onEvent('end', function () {
 				$set[$inputId] = $inputId.": {".implode(',', $eventSets)."}";
 			}else{
 				$js = [];
-				if ($inputInfo['event'] !== false AND isset($inputInfo['event']))
+				if (isset($inputInfo['event']) AND $inputInfo['event'] !== false)
 					foreach ($inputInfo['event'] as $funcName => $funcBody)
 						array_push($js, $funcName.': function (element, name, error) {
 							'.$funcBody.'
 						}');
 						
 				$events = 'false';
-				if ($inputInfo['event'] !== false AND isset($inputInfo['event'])){
+				if (isset($inputInfo['event']) AND $inputInfo['event'] !== false){
 					$events = '{'.implode(',', $js).'}';
 				}
 				$set[$inputId] = $inputId.': {type: '.$inputInfo['type'].', globalName: "'.$inputInfo['globalName'].'", events: '.$events.', serverName: "'.$inputInfo['serverName'].'"}';
@@ -379,7 +379,7 @@ class Input {
 	/**
 	* This is the method called by websom to get the input html string.
 	*/
-	public function get($meta) {
+	public function get() {
 		
 	}
 	

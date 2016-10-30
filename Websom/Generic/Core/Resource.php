@@ -177,6 +177,7 @@ class Resources {
 	* This is called by websom itself to include files.
 	*/
 	public static function getJs() {
+		$rtn = "";
 		$s = self::sortByIndex();
 		foreach ($s as $resource) {
 			if ($resource['type'] == 'javascript')
@@ -186,7 +187,7 @@ class Resources {
 		return $rtn;
 	}
 	
-	private  function check($name, $i) {
+	private static function check($name, $i) {
 		$rtn = true;
 		foreach ($i as $r => $a) {
 			if ($r[0] == '>') {

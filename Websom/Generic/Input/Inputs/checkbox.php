@@ -39,7 +39,7 @@ class Checkbox extends Input {
 	public $text = 'Checkbox';
 	public $label = 'Checkbox';
 	
-	function get($meta) {
+	function get() {
 		$e = Theme::input_check($this->text, $this->label);
 		
 		$e->attr("id", $this->id);

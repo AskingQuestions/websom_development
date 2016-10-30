@@ -188,7 +188,7 @@ class Text extends Input {
 		$this->displayType = $displayType;
 	}
 	
-	function get($meta) {
+	function get() {
 		$e = Theme::input_text($this->defaultValue, $this->placeholder, $this->label);
 	
 		

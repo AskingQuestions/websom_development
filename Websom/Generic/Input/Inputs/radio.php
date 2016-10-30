@@ -52,7 +52,7 @@ class Radio extends Input {
 		$this->options = $op;
 	}
 	
-	function get($meta) {
+	function get() {
 		$ops = $this->options;
 		
 		$opts = ["default" => $this->default_key];

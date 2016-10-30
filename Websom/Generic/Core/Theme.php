@@ -71,10 +71,10 @@ class Theme {
 	
 	
 	static public function getRule($name, $label) {
-		$rule = self::$rules[$name.'.'.$label];
+		$rule = [];
+		if (isset(self::$rules[$name.'.'.$label]))
+			$rule = self::$rules[$name.'.'.$label];
 		
-		if (!isset($rule))
-			$rule = [];
 		return $rule;
 	}
 	

@@ -21,7 +21,12 @@ $Properties['Input'] = Get_Client_Scripts().Get_Input_Scripts().Get_Responsive_S
 preg_match_all("~%(.*?)%~", $Page, $Propertie);
 
 foreach($Propertie[0] as $PropertieSet){
-	$Page = str_replace($PropertieSet, $Properties[str_replace("%", "", $PropertieSet)], $Page);
+	$rplc = str_replace("%", "", $PropertieSet);
+	$rplcVal = "";
+	if (isset($Properties[$rplc]))
+		$rplcVal = $Properties[$rplc];
+	
+	$Page = str_replace($PropertieSet, $rplcVal, $Page);
 }
 
 

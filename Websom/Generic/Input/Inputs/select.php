@@ -84,7 +84,7 @@ class Select extends Input {
 		$this->options = $op;
 	}
 	
-	function get($meta) {
+	function get() {
 		$ops = $this->options;
 		
 		

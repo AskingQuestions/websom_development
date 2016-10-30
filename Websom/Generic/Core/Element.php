@@ -31,7 +31,21 @@ class Element {
 	/**
 	* Use this to insert an `element` instance into the this `element` contents.
 	*/
-	public function append(&$element) {
+	public function append($element) {
+		array_push($this->identity['contents'], $element);
+	}
+	
+	/**
+	* This will append a reference to $this onto the $element.
+	*/
+	public function appendTo($element) {
+		$element->appendReference($this);
+	}
+	
+	/**
+	* Appends the $element reference.
+	*/
+	public function appendReference(&$element) {
 		array_push($this->identity['contents'], $element);
 	}
 
@@ -53,8 +67,10 @@ class Element {
 	* Use this to set an attribute on the element to a `value`.
 	*/
 	public function attr($name, $value = null) {
-		if ($value === null) 
+		if ($value === null) {
+			if (!isset($this->identity['attr'][$name])) return null;
 			return $this->identity['attr'][$name];
+		}
 		else
 			$this->identity['attr'][$name] = $value;
 	}
